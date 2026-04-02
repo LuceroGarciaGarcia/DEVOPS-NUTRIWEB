@@ -25,9 +25,13 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    # 🔥 FIX ERROR VITE (permiso)
+    - name: Fix permissions
+      run: chmod +x node_modules/.bin/vite
+
     # Build del proyecto
     - name: Build project
-      run: npm run build
+      run: npx vite build
 
     # Login a GitHub Container Registry
     - name: Login to GitHub Container Registry
